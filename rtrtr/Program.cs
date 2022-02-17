@@ -23,8 +23,8 @@ namespace rtrtr
 
             string FileExcel = @"C:\Users\stud\Desktop\Новая папка (13)\participants.csv";
 
-            List<UserJson> excel = ExcelFile(FileExcel);
-
+            //List<UserJson> excel = ExcelFile(FileExcel);
+            File222Excel();
             Console.ReadKey();
         }
         public static List<UserJson> JsonFile(string path)
@@ -96,7 +96,7 @@ namespace rtrtr
             foreach(var item in strArray)
             {
 
-                xml1 =  Windows. .GetBytes(item.ToString());
+                xml1 = UTF8Encoding.UTF8.GetBytes(item.ToString());
                 var result = System.Text.Encoding.UTF8.GetString(xml1, 0, xml1.Length);
                 Console.WriteLine(result);
             }
@@ -104,6 +104,20 @@ namespace rtrtr
             ObjExcel.Quit();
 
             return users2;
+        }
+        public static void File222Excel()
+        {
+            string path = @"C:\Users\stud\Desktop\Новая папка (13)\participants.csv";
+            var constew = File.ReadAllText(path, Encoding.UTF8);
+            var Conert = constew.Split('\n');
+            foreach(var item in Conert)
+            {
+                var myobject = item.Split(';');
+                foreach(var m in myobject)
+                {
+                    Console.WriteLine(m.TrimStart().TrimEnd());
+                }
+            }
         }
     }
 }
