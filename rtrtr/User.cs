@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace rtrtr
 {
-   public class UserJson
-   {
-        public UserJson()
+   public class User 
+    {
+        public User()
         {
         }
-        public UserJson(string firstName, string lastName, DateTime registrationDate)
+        public User(string firstName, string lastName, DateTime registrationDate)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -23,5 +23,9 @@ namespace rtrtr
 
         public DateTime RegistrationDate { get; set; }
 
+        public override string ToString()
+        {
+            return $"{FirstName}    {LastName}     {RegistrationDate}";
+        }
     }
 }
