@@ -2,19 +2,30 @@
 
 namespace rtrtr
 {
+    /// <summary>
+    /// класс для работы с юзерами из файлов в программе, наследуюет от (User)
+    /// </summary>
     public class UserFull : User
     {
-        public UserFull(string firstName, string lastName, DateTime registrationDate, int iD, string supplier) : base(firstName, lastName, registrationDate)
+        /// <summary>
+        /// конструктор для создания 
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="registrationDate"></param>
+        /// <param name="supplier"></param>
+        public UserFull(string firstName, string lastName, DateTime registrationDate, string supplier) : base(firstName, lastName, registrationDate)
         {
-            ID = iD;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.RegistrationDate = registrationDate;
             Supplier = supplier;
         }
-        public int ID { get; set; }
         public string Supplier { get; set; }
 
         public override string ToString()
         {
-            return $"{FirstName} {LastName} {RegistrationDate} {Supplier}";
+            return $"\t{FirstName}\t\t{LastName}\t{RegistrationDate}\t\t{Supplier}\t";
         }
     }
 }
