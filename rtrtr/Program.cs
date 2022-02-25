@@ -28,13 +28,14 @@ namespace rtrtr
         public static void LogicSection()
         {
             List<UserFull> fulls = ReadingFiles.UsersMethod(FileJson, FileXml, FileExcel);
-            Console.WriteLine("Введите команду");
-            string Message = Console.ReadLine();
-
-            string[] MessageBox = Message.Split(' ');
+            
             char InfiniteLoop = 'g';
             do
             {
+                Console.WriteLine("Введите команду");
+                string Message = Console.ReadLine();
+
+                string[] MessageBox = Message.Split(' ');
                 switch (MessageBox[0])
                 {
                     case "get-page":
